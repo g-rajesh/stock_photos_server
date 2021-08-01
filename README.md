@@ -1,2 +1,2 @@
-# stock_photos_client
-Client side code for uplash.com clone
+# stock_photos_server
+Server side code for uplash.com clone
