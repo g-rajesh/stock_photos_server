@@ -1,4 +1,4 @@
-const { CLIENT_ID } = require("../../config/config");
+// const { CLIENT_ID } = require("../../config/config");
 const fetch = require("node-fetch");
 
 const fetchData = async (url) => {
@@ -14,9 +14,9 @@ module.exports = {
                     page = 1;
                }
 
-               let url = `https://api.unsplash.com/photos/?client_id=${CLIENT_ID}&page=${page}`;
+               let url = `https://api.unsplash.com/photos/?client_id=${process.env.CLIENT_ID}&page=${page}`;
                if (query) {
-                    url = `https://api.unsplash.com/search/photos/?client_id=${CLIENT_ID}&query=${query}&page=${page}`;
+                    url = `https://api.unsplash.com/search/photos/?client_id=${process.env.CLIENT_ID}&query=${query}&page=${page}`;
                }
 
                let data = await fetchData(url);
