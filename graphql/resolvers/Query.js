@@ -14,9 +14,9 @@ module.exports = {
                     page = 1;
                }
 
-               let url = `https://api.unsplash.com/photos/?client_id=${CLIENT_ID}&page=${page}`;
+               let url = `https://api.unsplash.com/photos/?client_id=${process.env.CLIENT_ID}&page=${page}`;
                if (query) {
-                    url = `https://api.unsplash.com/search/photos/?client_id=${CLIENT_ID}&query=${query}&page=${page}`;
+                    url = `https://api.unsplash.com/search/photos/?client_id=${process.env.CLIENT_ID}&query=${query}&page=${page}`;
                }
 
                let data = await fetchData(url);
@@ -44,24 +44,6 @@ module.exports = {
                     page: page + 1,
                };
           },
-          // getQueryPhotos: async (_, { query, page }) => {
-          //      const url = `https://api.unsplash.com/search/photos/?client_id=${CLIENT_ID}&query=${query}&page=${page}`;
-          //      const data = await fetchData(url);
-          //      const results = data.results;
-
-          //      const photos = results.map((photo) => {
-          //           return {
-          //                id: photo.id,
-          //                picture: photo.urls.regular,
-          //                picture_description: photo.alt_description,
-          //                likes: photo.likes,
-          //                username: photo.user.username,
-          //                user_portfolio: photo.user.portfolio_url,
-          //                user_profile: photo.user.profile_image.medium,
-          //           };
-          //      });
-
-          //      return photos;
-          // },
+          
      },
 };
