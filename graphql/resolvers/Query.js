@@ -1,4 +1,4 @@
-const { CLIENT_ID } = require("../../config/config");
+// const { CLIENT_ID } = require("../../config/config");
 const fetch = require("node-fetch");
 
 const fetchData = async (url) => {
